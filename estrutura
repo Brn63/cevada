@@ -1,0 +1,37 @@
+// criar uma div para o jogo
+const gameContainer = document.createElement("div");
+gameContainer.classList.add("game-container");
+document.body.appendChild(gameContainer);
+
+// definir a lista de imagens para o jogo
+const cardImages = [
+  "imagem1.jpg",
+  "imagem2.jpg",
+  "imagem3.jpg",
+  "imagem4.jpg",
+  "imagem5.jpg",
+  "imagem6.jpg",
+  "imagem7.jpg",
+  "imagem8.jpg",
+];
+
+// definir o número de cartas no jogo
+const numCards = 16;
+
+// definir o tempo limite para completar o jogo em segundos
+const timeLimit = 60;
+
+// definir a pontuação inicial do jogador
+let score = 0;
+
+// definir a lista de cartas do jogo
+const cards = [];
+
+// criar as cartas do jogo
+for (let i = 0; i < numCards; i++) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.dataset.cardId = i % (numCards / 2);
+  cards.push(card);
+  gameContainer.appendChild(card);
+}
